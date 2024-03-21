@@ -9,7 +9,7 @@ export class HomePage {
 
   constructor() {}
 
-  title: string = "Directivas Angular";
+  title: string = "Mi nueva pagina";
 
   verdadero: boolean = false;
 
