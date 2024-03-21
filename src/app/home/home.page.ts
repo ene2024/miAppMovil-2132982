@@ -13,4 +13,8 @@ export class HomePage {
 
   verdadero: boolean = false;
 
+  hazmeClic(): void {
+    alert("Hiciste clic");
+  }
+
 }
