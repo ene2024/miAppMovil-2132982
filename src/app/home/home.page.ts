@@ -9,4 +9,8 @@ export class HomePage {
 
   constructor() {}
 
+  title: string = "Directivas Angular";
+
+  verdadero: boolean = false;
+
 }
