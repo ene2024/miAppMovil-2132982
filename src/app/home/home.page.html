@@ -6,21 +6,3 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <p [ngClass]="{'rojo':verdadero, 'azul':verdadero == false}">Si ves este mensaje en rojo es porque verdadero es verdadero si lo ves azul es porque es false</p>
-
-  <div id="container">
-    <ion-button (click) = "hazmeClic()">Hazme Clic!</ion-button>
-  </div>
-
-  <div class="containerImg">
-    <img [src]="imgUrl">
-  </div>
-
-</ion-content>
