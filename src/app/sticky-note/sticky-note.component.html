@@ -7,35 +7,19 @@
 <div class="content">
 
   <ion-list>
-    <ion-item *ngFor="let tarea of tareas">
-      <!-- Mostrar los detalles de la tarea aquí -->
-      <ion-label>{{ tarea.titulo }}</ion-label>
-      <!-- Agrega más detalles si es necesario -->
+    <ion-item *ngFor="let tareaSericio of tareaServicioArray">
+      <ion-card style="margin-top: 30px;">
+        <ion-card-header>
+          <ion-card-title style="color: purple;">{{tareaSericio.titulo}}</ion-card-title>
+          <ion-card-subtitle><strong>Fecha</strong>     {{tareaSericio.fecha}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <ion-button expand="block" style="--background: #d3d3d3; color: purple;">+ Ver más detalles</ion-button>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
-
-  <ion-card style="margin-top: 30px;">
-    <ion-card-header>
-      <ion-card-title style="color: purple;">Ir al veterinario</ion-card-title>
-      <ion-card-subtitle><strong>Fecha</strong>     05/12</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-        <ion-button expand="block" style="--background: #d3d3d3; color: purple;">+ Ver más detalles</ion-button>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card style="margin-top: 30px;">
-    <ion-card-header>
-      <ion-card-title style="color: purple;">Ir al veterinario</ion-card-title>
-      <ion-card-subtitle><strong>Fecha</strong>     05/12</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-        <ion-button expand="block" style="--background: #d3d3d3; color: purple;">+ Ver más detalles</ion-button>
-    </ion-card-content>
-  </ion-card>
-
 </div>
 
 

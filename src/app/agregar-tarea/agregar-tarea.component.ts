@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from 'src/tareas';
 import { ModalController } from '@ionic/angular';
+import { AgregaTareasService } from '../agrega-tareas.service';
 
 @Component({
   selector: 'app-agregar-tarea',
@@ -9,20 +10,27 @@ import { ModalController } from '@ionic/angular';
 })
 export class AgregarTareaComponent  implements OnInit {
 
-  constructor(private modalController : ModalController) { } 
+  constructor(private modalController : ModalController, private tareaServicio:AgregaTareasService) { } 
+
+  tareaServicioArray: Tarea[] = this.tareaServicio.tareas;
 
   ngOnInit() {}
 
-  async agregarTarea(){
-    await this.modalController.dismiss(this.agregarTarea)
-  }
+  tareaNombre: string ='';
 
   nuevaTarea: Tarea = {
     titulo: '',
-    fechaMes: 1,
-    fechaAnio: 1,
+    fecha: '',
     descripcion: ''
   };
 
+
+  submit(): void{
+    this.tareaServicio.agregarTarea(this.nuevaTarea);
+  }
+
+  cerrarModal(): void{
+    this.modalController.dismiss();
+  }
 
 }
