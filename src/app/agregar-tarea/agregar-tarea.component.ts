@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from 'src/tareas';
 import { ModalController } from '@ionic/angular';
-import { AgregaTareasService } from '../agrega-tareas.service';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-agregar-tarea',
@@ -10,7 +10,7 @@ import { AgregaTareasService } from '../agrega-tareas.service';
 })
 export class AgregarTareaComponent  implements OnInit {
 
-  constructor(private modalController : ModalController, private tareaServicio:AgregaTareasService) { } 
+  constructor(private modalController : ModalController, private tareaServicio:TareasService) { } 
 
   tareaServicioArray: Tarea[] = this.tareaServicio.tareas;
 

@@ -7,15 +7,16 @@
 <div class="content">
 
   <ion-list>
-    <ion-item *ngFor="let tareaSericio of tareaServicioArray">
+    <ion-item *ngFor="let tarea of tareas">
       <ion-card style="margin-top: 30px;">
         <ion-card-header>
-          <ion-card-title style="color: purple;">{{tareaSericio.titulo}}</ion-card-title>
-          <ion-card-subtitle><strong>Fecha</strong>     {{tareaSericio.fecha}}</ion-card-subtitle>
+          <ion-card-title style="color: purple;">{{tarea.titulo}}</ion-card-title>
+          <ion-card-subtitle><strong>Fecha</strong>     {{tarea.fecha}}</ion-card-subtitle>
         </ion-card-header>
       
         <ion-card-content>
             <ion-button expand="block" style="--background: #d3d3d3; color: purple;">+ Ver más detalles</ion-button>
+            <ion-button (click)="eliminarTarea(tarea)" expand="block" style="--background: #d3d3d3; color: red;">Eliminar</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-item>

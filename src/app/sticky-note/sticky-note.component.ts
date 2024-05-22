@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AgregarTareaComponent } from '../agregar-tarea/agregar-tarea.component';
 import { Tarea } from 'src/tareas';
-import { AgregaTareasService } from '../agrega-tareas.service';
+import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-sticky-note',
@@ -11,11 +11,14 @@ import { AgregaTareasService } from '../agrega-tareas.service';
 })
 export class StickyNoteComponent  implements OnInit {
 
-  constructor(private modalController: ModalController, private tareaServicio:AgregaTareasService ) { }
+  constructor(private modalController: ModalController, private tareaServicio:TareasService ) { }
 
-  ngOnInit() {}
+  tareas: Tarea[] = [];
 
-  tareaServicioArray: Tarea[] = this.tareaServicio.tareas;
+  ngOnInit() {
+    this.tareas = this.tareaServicio.getTareas();
+  }
+
 
   async abrirModal(){
     const modal = await this.modalController.create({
@@ -25,4 +28,8 @@ export class StickyNoteComponent  implements OnInit {
     return await modal.present();
   }
 
+
+  eliminarTarea(tarea: Tarea){
+    this.tareaServicio.eliminarTarea(tarea);
+  }
 }
